@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Really?</title>
+    <link rel="stylesheet" href="/really.css"
+</head>
+<body>
+    <div class="container">
+        <div >
+            <h1 class = "header_text">Really?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/clG4WiYer5YAAAAi/shinchan.gif" alt="Cute animated illustration">
+        </div>
+        <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>            
+        <script>const body = document.querySelector("body");
+
+            function createHeart() {
+                const heart = document.createElement("div");
+                heart.className = "fas fa-heart";
+                heart.style.left = (Math.random() * 100)+"vw";
+                heart.style.animationDuration = (Math.random()*3)+2+"s"
+                body.appendChild(heart);
+            }
+            setInterval(createHeart,100);
+            setInterval(function name(params) {
+                var heartArr = document.querySelectorAll(".fa-heart")
+                if (heartArr.length > 200) {
+                   heartArr[0].remove()
+                }
+                
+            },100)
+            </script>
+        <div class = "buttons">
+            <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "yes.html";
+                }
+                
+                function moveButton() {
+                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                    document.getElementById('noButton').style.left = `${x}px`;
+                    document.getElementById('noButton').style.top = `${y}px`;
+                }
+            </script> 
+        </div>
+    </div>
+</body>
+</html>
